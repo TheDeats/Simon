@@ -128,7 +128,7 @@ async function setH1InnerHtml(hasWon, endOfGame) {
       "Oof, I hear fatty fish and leafy greens are good for your memory...";
     if (best >= 5 && best <= 9) {
       text = "Not bad, the average person can do 5 to 9 levels";
-    } else if (best > 9) {
+    } else if (best > 9 && best < SequenceLength) {
       text = "The average person can do 5 to 9 levels so your above average!";
     } else if (best == SequenceLength) {
       text = "Winner! Your memory is above average!";
