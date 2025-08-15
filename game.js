@@ -124,13 +124,17 @@ async function setH1InnerHtml(hasWon, endOfGame) {
   }
   $("h1").html("Level: " + level + "<span></span>Best: " + best);
   if (endOfGame) {
+    let lastLevel = level;
+    if (!hasWon) {
+      lastLevel--;
+    }
     let text =
       "Oof, I hear fatty fish and leafy greens are good for your memory...";
-    if (best >= 5 && best <= 9) {
+    if (lastLevel >= 5 && lastLevel <= 9) {
       text = "Not bad, the average person can do 5 to 9 levels";
-    } else if (best > 9 && best < SequenceLength) {
+    } else if (lastLevel > 9 && lastLevel < SequenceLength) {
       text = "The average person can do 5 to 9 levels so your above average!";
-    } else if (best == SequenceLength) {
+    } else if (lastLevel == SequenceLength) {
       text = "Winner! Your memory is above average!";
     }
     $("h2").text(text);
